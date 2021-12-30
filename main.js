@@ -85,7 +85,7 @@ function rules(){
 function checkName(playerName){
 
     if (!/^[a-zA-Z]+$/.test(playerName) || !playerName) {
-        alert("Your Name is not Valid! It is not a String MaderPaker ! ")
+        alert("Your Name is not Valid! It is not a String ! ")
         location.reload();
       }else{
           alert(" Your Name is Valid, you can now Play " + playerName )
@@ -116,7 +116,7 @@ function checkNumber(playerGuess){
 
 
 function checkMoney(userMoney){
-    if(userMoney <= 100 && userMoney == 0){
+    if(userMoney <= 100){
         alert(" Player Bet is lower than expected 100USD ..")
         alert(" Comeback again if you have enough Money in your packet .. ")
         Window.stop()
