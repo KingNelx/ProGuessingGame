@@ -77,6 +77,7 @@ function userBet(){
 
 function rules(){
     alert(" Each Wrong Guess is equal to 100USD$ Deduction to your bet. ")
+    alert(" Minimum Bet is 100$USD")
     alert(" If you win you will receive Triple pay ")
 }
 
@@ -108,7 +109,7 @@ function checkBet(playerBet){
 function checkNumber(playerGuess){
     if (/^[a-zA-Z]+$/.test(playerGuess) || !playerGuess) {
         alert(" Your Guess is invalid, It is Suspicios to Guess a 'WORD' ")
-        Window.stop()
+        location.reload();
      
     }
 }
@@ -119,6 +120,6 @@ function checkMoney(userMoney){
     if(userMoney <= 100){
         alert(" Player Bet is lower than expected 100USD ..")
         alert(" Comeback again if you have enough Money in your packet .. ")
-        Window.stop()
+        location.reload();
     }
 }
