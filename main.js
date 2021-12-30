@@ -6,7 +6,7 @@ let noMoney = "You Dont Have enough money to play ..."
 
 document.querySelector("#button").onclick = function() {
     let guessNumber = document.querySelector("#guessNumber").value
-
+    let pMoney = document.getElementById("pMoney").textContent = "Player Money:$ " + customerBet
 
     checkNumber(guessNumber)
 
@@ -26,18 +26,18 @@ document.querySelector("#button").onclick = function() {
     if(guessNumber == randomNumber) {
         alert("Correct")
         customerBet *= 3
-        document.getElementById("pMoney").textContent = "Player Money:$ " + customerBet
+        pMoney.textContent = "Player Money:$ " + customerBet
     }
     
     else if(guessNumber > randomNumber){
         alert("Try lower number")
         customerBet -= wrongGuess
         if(customerBet <= 0){
-        document.getElementById("pMoney").textContent = "Player Money:$ " + noMoney
+        pMoney.textContent = "Player Money:$ " + noMoney
         alert("You can not Play anymore, You ran out of money")
         location.reload();
         }
-        document.getElementById("pMoney").textContent = "Player Money:$ " + customerBet
+        pMoney.textContent = "Player Money:$ " + customerBet
     }
     
     else{
@@ -83,6 +83,7 @@ function rules(){
 
 
 function checkName(playerName){
+
     if (!/^[a-zA-Z]+$/.test(playerName) || !playerName) {
         alert("Your Name is not Valid! It is not a String MaderPaker ! ")
         location.reload();
@@ -115,11 +116,9 @@ function checkNumber(playerGuess){
 
 
 function checkMoney(userMoney){
-    if(userMoney <= 100){
+    if(userMoney <= 100 && userMoney == 0){
         alert(" Player Bet is lower than expected 100USD ..")
         alert(" Comeback again if you have enough Money in your packet .. ")
         Window.stop()
-    }else{
-        alert(" Bet successfully .. ")
     }
 }
