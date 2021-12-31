@@ -13,7 +13,7 @@ document.querySelector("#button").onclick = function() {
     
     if(guessNumber === '' ){
         alert(" Guess number can not be empty")
-        location.reload();
+        Window.stop()
 
     }
 
@@ -27,6 +27,8 @@ document.querySelector("#button").onclick = function() {
         alert("Correct")
         customerBet *= 3
         pMoney.textContent = "Player Money:$ " + customerBet
+        alert(" You may now collect your winnings .. ")
+        location.reload()
     }
     
     else if(guessNumber > randomNumber){
@@ -97,7 +99,7 @@ function checkName(playerName){
 function checkBet(playerBet){
     if (/^[a-zA-Z]+$/.test(playerBet) || !playerBet) {
         alert(" Your Bet is invalid, It is Suspicios to bet a 'WORD' ")
-        location.reload();
+        Window.reload()
      
       }else{
     
