@@ -88,10 +88,8 @@ function rules(){
 function checkName(playerName){
 
     if (!/^[a-zA-Z]+$/.test(playerName) || !playerName) {
-        alert("Your Name is not Valid! It is not a String ! ")
-        location.reload();
-      }else{
-          alert(" Your Name is Valid, you can now Play " + playerName )
+        alert("Your name is invalid")
+       Window.stop()
       }
 }
 
@@ -101,9 +99,6 @@ function checkBet(playerBet){
         alert(" Your Bet is invalid, It is Suspicios to bet a 'WORD' ")
         Window.reload()
      
-      }else{
-    
-          alert(" Bet successfully .. Total Bet: $"+playerBet)
       }
 }
 
@@ -116,12 +111,14 @@ function checkNumber(playerGuess){
     }
 }
 
-
-
 function checkMoney(userMoney){
     if(userMoney <= 100){
         alert(" Player Bet is lower than expected 100USD ..")
         alert(" Comeback again if you have enough Money in your packet .. ")
         location.reload();
     }
+}
+
+function reloadGame(){
+    location.reload()
 }
